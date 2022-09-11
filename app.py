@@ -16,4 +16,7 @@ def home():
 @app.route('/predict', methods = ['POST'])
 def predict():
     if request.method == 'POST':
+        Year = int(request.form['Year'])
+        Present_Price = float(request.form['Present_Price'])
+        Kms_Driven = int(request.form['Kms_Driven'])
         
