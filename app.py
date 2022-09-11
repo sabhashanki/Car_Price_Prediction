@@ -36,7 +36,7 @@ def predict():
     Seller_Type = request.form['Seller_Type']
 
     if Seller_Type == 'Individual':
-        dividual = 1
+        Individual = 1
     else:
         Individual = 0
 
@@ -48,17 +48,17 @@ def predict():
         Manual = 0
 
     Car_Name = request.form['Car_Name']
-    amaze = brio = ciaz = city = corolla_altis = fortuner = grand_i10 = i10 = i20 = innova = jazz = swift = sx4 = verna = 0
-    names = ['amaze', 'brio', 'ciaz', 'city', 'corolla_altis', 'fortuner', 'grand_i10', 'i10', 'i20', 'innova', 'jazz', 'swift', 'sx4', 'verna' ]
+    dzire = i10 = swift = seltos = polo = octavia = 0
+    names = ['dzire', 'i10', 'swift', 'seltos', 'polo', 'octavia']
     
     for name in names:
         if Car_Name == name:
             name = 1
+    input = np.array([Present_Price, Kms_Driven, Owner, seltos, polo, octavia, dzire, i10, swift, Diesel, Petrol, Manual, Individual, Car_Age])
+    prediction = model.predict([input])
+    output = round(prediction[0],2)
     
-    prediction = model.predict([[Present_Price, Kms_Driven, Owner, amaze, brio, ciaz, city, corolla_altis, fortuner, grand_i10, i10, i20, innova, jazz, swift, sx4, verna, Diesel, Petrol, Manual, Individual, Car_Age]])
-    output = prediction[0]
-    
-    return render_template('home.html', prediction_text = 'Well You can sell the car for {}'.format(output))
+    return render_template('home.html', prediction_text = 'Your Car resale price is {} Lakhs'.format(output))
 
 if __name__ == '__main__':
     app.run(debug = True)
