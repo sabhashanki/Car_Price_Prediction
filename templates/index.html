@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+
+    <div style="color:rgb(3, 3, 3)">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            
+            <h3>Car Model</h3>
+            <select name="Car_Name" id="car" required="required">
+                <option value="amaze">Honda Amaze</option>
+                <option value="brio">Honda Brio</option>
+                <option value="corolla_altis">Toyota Corolla</option>
+                <option value="fortuner">Toyota Fortuner</option>
+                <option value="grand_i10">Hyundai Grand i10</option>
+                <option value="i10">Hyundia i10</option>
+                <option value="i20">Hyundai i20</option>
+                <option value="innova">Toyota Innova</option>
+                <option value="jazz">Honda Jazz</option>
+                <option value="swift">Maruthi Suzuki Swift</option>
+                <option value="sx4">Maruthi Suzuki SX4</option>
+                <option value="verna">Hyundai Verna</option>
+            </select>
+
+           
+            
+            <h3>What Is the Fuel type ?</h3>
+            <select name="Fuel_Type" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            
+            <h3>Are you A Dealer or Individual ?</h3>
+            <select name="Seller_Type" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            
+            <h3>Transmission type ?</h3>
+            <select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+
+            <br><button id="sub" type="submit ">Calculate</button>
+            <br>
+
+
+
+
+        </form>
+        
+        <p>©2022 Shankesh Raju MS</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
