@@ -4,7 +4,7 @@ Car Price Prediction
 Overview
 ----------
 
-This model used to predict used car price specifying model, year, transmission type, fuel type.
+This model is used to predict used car price with given model, year, transmission type, fuel type details
 Kindly install all required packages mentioned in requirements file.
 
 Contents
